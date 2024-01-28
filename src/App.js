@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
@@ -10,6 +11,14 @@ function App() {
 }
 
 const Comments = () =>{
+  const [comments, setComments] = useState([])
+  
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/comments');
+    .then(res => res.json())
+
+  },[]);
+
   return(
     <div>
       <h2>Id:</h2>
