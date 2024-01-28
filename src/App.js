@@ -14,16 +14,16 @@ const Comments = () =>{
   const [comments, setComments] = useState([])
   
   useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/comments');
+    fetch('https://jsonplaceholder.typicode.com/comments')
     .then(res => res.json())
-
+    .then(data => setComments(data));
   },[]);
 
   return(
     <div>
       <h2>Id:</h2>
       <h1>Name: </h1>
-      <p>Comments:</p>
+      <p>Comments:{comments.length}</p>
     </div>
   )
 }
